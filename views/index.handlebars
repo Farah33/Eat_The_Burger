@@ -1,38 +1,21 @@
-<h1>Cats!</h1>
+<div id="burgerList">
+      <h1>Burger List</h1>
+      {{#each burgers_data}}
+        <form action='/update/{{id}}' method=post>
+          <pre>{{id}}. {{burger_name}} <button type="submit">Devour</button>
+          </pre>
+        </form>
+      {{/each}}
+    </div>
 
-<h2>burger spicy!</h2>
+    <form action='/save' method=post>
+      <textarea name="newBurger" rows="8" cols="20"></textarea>
+      <button type="submit">Enter the Burger !! </button>
+    </form>
 
-<ul>
-  {{#each burger}}
-    {{#unless devoured}}
-      {{> burger/burgers devoured=true}}
-    {{/unless}}
-  {{/each}}
-</ul>
-
-<h2>Bugers Type</h2>
-
-<ul>
-  {{#each burgers}}
-    {{#if devoured}}
-      {{> burgers/burger-block devoured=false}}
-    {{/if}}
-  {{/each}}
-</ul>
-
-<h2>Add a burger</h2>
-<form class="create-form">
-
-  <div class="form-group">
-    <label for="ca">Choose Burger:</label>
-    <input type="text" id="ca" name="name">
+    <div id="devourList">
+      <h1>Devour List</h1>
+      {{#each devoured_data}}
+        <pre>{{id}}. {{burger_name}}</pre>
+      {{/each}}
   </div>
-
-  <div class="form-group">
-    <label for="slee">devoured?</label><br>
-    <input type="radio" name="sleepy" value="1" checked> devoured!<br>
-    <input type="radio" name="sleepy" value="0"> cooked
-  </div>
-
-  <button type="submit">Add burger</button>
-</form>
