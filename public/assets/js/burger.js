@@ -1,5 +1,5 @@
 (function() {
-    $(".devoured").on("click", function(event) {
+    $("#burgerList").on("click", function(event) {
         var id = $(this).data("id");
         var newdevoured = $(this).data("newdevoured");
 
@@ -8,7 +8,7 @@
         };
 
         // Send the PUT request.
-        $.ajax("/api/cats/" + id, {
+        $.ajax("/api/burgers/" + id, {
             type: "PUT",
             data: newdevouredState
         }).then(
@@ -20,7 +20,7 @@
         );
     });
 
-    $(".create-form").on("submit", function(event) {
+    $("#burgerList").on("submit", function(event) {
         // Make sure to preventDefault on a submit event.
         event.preventDefault();
 

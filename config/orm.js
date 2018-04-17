@@ -2,7 +2,7 @@ var connection = require('./connection.js');
 
 var orm = {
     selectBurgers: function(tableInput, devouredInput, cb) {
-        var string = 'SELECT id,burger_name FROM ' + tableInput + ' WHERE devoured = ?';
+        var string = 'SELECT id, name FROM ' + tableInput + ' WHERE devoured = ?';
         connection.query(string, [devouredInput], function(err, result) {
             if (err) {
                 throw err;
@@ -11,7 +11,7 @@ var orm = {
         });
     },
     insertOne: function(tableInput, nameInput, cb) {
-        var string = 'INSERT INTO ' + tableInput + ' (burger_name,devoured) VALUES (?, ?)';
+        var string = 'INSERT INTO ' + tableInput + ' (name,devoured) VALUES (?, ?)';
 
         connection.query(string, [nameInput, 0], function(err, result) {
             if (err) throw err;
