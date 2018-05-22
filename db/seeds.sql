@@ -1,6 +1,4 @@
-INSERT INTO burgers (name) VALUES ('Chicken');
-INSERT INTO burgers (name) VALUES ('Beef');
-INSERT INTO burgers (name) VALUES ('frozen');
-INSERT INTO burgers (name, devoured) VALUES ('james', true);
-INSERT INTO burgers (name, devoured) VALUES ('Mary', false);
-INSERT INTO burgers (name, devoured) VALUES ('Jann', true);
+-- Inserting start values into the DB
+INSERT INTO  burgers (burger_name) VALUES ("Lets Give Them Something Shiitake About Burger");
+INSERT INTO  burgers (burger_name) VALUES ("GUAC WON'T STOP Burger");
+INSERT INTO  burgers (burger_name) VALUES ("'Don't go BACON my Heart' Burger");
